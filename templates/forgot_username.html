@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="login-card">
+
+<h2>
+
+Forgot Username
+
+</h2>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<input
+class="form-control"
+name="email"
+type="email"
+required>
+
+<br>
+
+<button
+class="btn btn-success">
+
+Send Username
+
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

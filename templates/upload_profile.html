@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="dashboard-card">
+
+    {% if user.profile.image %}
+
+    <img src="{{ user.profile.image.url }}" class="profile-img">
+
+    {% endif %}
+
+    <h1>
+
+        Welcome
+
+        {{ user.username }}
+
+    </h1>
+
+    <p>
+
+        Account Active
+
+    </p>
+    <h2>
+
+        Upload Profile
+
+    </h2>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        <input type="file" name="image" class="form-control">
+
+        <br>
+
+        <button class="btn btn-primary">
+
+            Upload
+
+        </button>
+
+    </form>
+
+</div>
+
+
+
+{% endblock %}
